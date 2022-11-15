@@ -4,13 +4,13 @@
          <div class="card-body">
                             <form @submit="submitProduct">
                             <strong>Name:</strong>
-                            <input type="text" class="form-control" v-model="productName">
+                            <input type="text" class="form-control" v-model="itemName">
                             <strong>Price:</strong>
-                            <input type="text" class="form-control" v-model="productPrice">
+                            <input type="text" class="form-control" v-model="itemPrice">
                             <strong>Description:</strong>
-                            <textarea class="form-control" v-model="productDescription"></textarea>
+                            <textarea class="form-control" v-model="itemInfo"></textarea>
                             <strong>ImageLink:</strong>
-                            <input type="text" class="form-control" v-model="productImage">
+                            <input type="text" class="form-control" v-model="itemImage">
         
                             <button class="btn btn-success">Submit</button>
                             </form>
@@ -26,10 +26,10 @@
             data () {
         return {
                 
-                productName: '',
-          productDescription: '',
-          productPrice: '',
-          productImage: '',
+            itemName: '',
+          itemInfo: '',
+          itemPrice: '',
+          itemImage: '',
           output: ''
     
             

@@ -2,27 +2,27 @@
 <template> 
     <!-- <div class="row"> -->
        <div class="card-deck"  >
-           <router-link v-for="item in items" :key="item.productID" :to="{ name: 'ProductDetails', params: { id: item.productID} }">
+           <router-link v-for="item in items" :key="item.ItemID" :to="{ name: 'itemDetails', params: { id: item.ItemID} }">
              <div class="card" style="width: 18rem; height: 25em;">
-               <img :src="(item.productImage)" class="card-img-top imagesize" alt="Test">
+               <img :src="(item.ItemImage)" class="card-img-top imagesize" alt="Test">
                <div class="card-body">
-                 <h5 class="card-title">{{item.productName}}</h5>
-                 <h6 class="card-text">${{item.productPrice}}</h6>
-                 <p class="card-text">{{item.productDescription}}</p>
+                 <h5 class="card-title">{{item.ItemName}}</h5>
+                 <h6 class="card-text">${{item.ItemPrice}}</h6>
+                 <p class="card-text">{{item.ItemInfo}}</p>
                  <a href="#" class="btn btn-light addToCart" style="border-top: 5px solid #d9322b; border-bottom: 5px solid #0f6fb7;
-     background-color: white; " @add-to-shoppingcart="addShoppingCart(product)"
-               :ProductImage="item.productImage"
-               :ProductDescription="item.productDescription"
-               :ProductTitle="item.productName"
+                 background-color: white; " @add-to-shoppingcart="addShoppingCart(item)"
+               :ItemImage="item.ItemImage"
+               :ItemDescription="item.ItemInfo"
+               :ItemTitle="item.ItemName"
                
-               :ProductPrice="item.productPrice"
-               :ProductID="item.productID">Add to Shoppingcart</a>
+               :ItemPrice="item.ItemPrice"
+               :ItemID="item.ItemID">Add to Shoppingcart</a>
                </div>
              </div>
            </router-link>
        </div>
        <router-view
-         v-on:setProductInCart="setShoppingCart"/>
+         v-on:setItemInCart="setShoppingCart"/>
    </template>
      
    
@@ -41,23 +41,23 @@
      methods:{
       /* eslint-disable */
        refreshData(){
-         axios.get('https://localhost:44334/api/Product')
+         axios.get('https://localhost:7235/api/Item')
          .then((response)=>{
            this.items= response.data;
            
            
          });
        },
-       addShoppingCart(product){
-         console.log(product);
-         if (product){
-           this.$emit('setProductInCart', product);
+       addShoppingCart(item){
+         console.log(item);
+         if (item){
+           this.$emit('setItemInCart', item);
          }
        },
        /* eslint-disable */
        toCart(){
-         var obj = new Product(this.product[0].productID,this.product[0].productName, this.product[0].productPrice, this.product[0].productImage, this.product[0].productDiscription);
-         this.$emit('setProductInCart', obj);
+         var obj = new Item(this.item[0].ItemID,this.item[0].ItemName, this.item[0].ItemPrice, this.item[0].ItemImage, this.item[0].ItemDescription);
+         this.$emit('setItemInCart', obj);
        }
      },
      mounted:function(){

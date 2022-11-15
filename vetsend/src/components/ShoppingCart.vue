@@ -11,7 +11,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-body">
-              <h1>Your cart <img class="logosmall" src="../assets/VetsendSmall.png"/></h1>
+              <h1>Your cart </h1>
               
               <table class="table">
                 <thead class="table-head">
@@ -45,7 +45,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-light" data-dismiss="modal" style="border-top: 5px solid #d9322b; border-bottom: 5px solid #0f6fb7;
+              <button type="button" class="btn btn-light" data-dismiss="modal" style="border-top: 5px solid #9EEB47; border-bottom: 5px solid #9EEB47;
     background-color: white; ">Close</button>
             </div>
           </div>
@@ -146,8 +146,8 @@
   }
   
   .table-head{
-    border-top: 5px solid #d9322b;
-    border-bottom: 5px solid #0f6fb7;
+    border-top: 5px solid #9EEB47;
+    border-bottom: 5px solid #9EEB47;
     background-color: white;
   }
   

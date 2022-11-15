@@ -26,6 +26,7 @@
   a{
     color: dimgray;
     text-decoration: grey;
+    
   }
   a:hover{
     color: red;
