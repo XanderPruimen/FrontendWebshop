@@ -1,7 +1,4 @@
 <template>
- 
-
-
     <div class="container">
     <section class="mb-5">
    
@@ -82,12 +79,12 @@
      },
 
      created(){
-       this.id = this.$route.params.id;
+       this.ItemID = this.$route.params.ItemID;
        this.refreshData();
      },
      methods:{
        refreshData(){
-         axios.get('https://localhost:7235/api/Item'+ this.id)
+         axios.get('https://localhost:7235/api/Item'+ this.ItemID)
              .then((response) => {
                this.item = response.data;
                console.log(this.item[0])

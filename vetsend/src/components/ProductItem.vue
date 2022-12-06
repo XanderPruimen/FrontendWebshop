@@ -1,8 +1,7 @@
-/* eslint-disable */
 <template> 
     <!-- <div class="row"> -->
        <div class="card-deck"  >
-           <router-link v-for="item in items" :key="item.ItemID" :to="{ name: 'itemDetails', params: { id: item.ItemID} }">
+           <router-link v-for="item in items" :key="item.ItemID" :to="{ name: 'ProductDetails', params: { id: item.ItemID} }">
              <div class="card" style="width: 18rem; height: 25em;">
                <img :src="(item.ItemImage)" class="card-img-top imagesize" alt="Test">
                <div class="card-body">
@@ -10,9 +9,9 @@
                  <h6 class="card-text">${{item.ItemPrice}}</h6>
                  <p class="card-text">{{item.ItemInfo}}</p>
                  <a href="#" class="btn btn-light addToCart" style="border-top: 5px solid #d9322b; border-bottom: 5px solid #0f6fb7;
-                 background-color: white; " @add-to-shoppingcart="addShoppingCart(item)"
+                  background-color: white; " @add-to-shoppingcart="addShoppingCart(item)"
                :ItemImage="item.ItemImage"
-               :ItemDescription="item.ItemInfo"
+               :ItemInfo="item.ItemInfo"
                :ItemTitle="item.ItemName"
                
                :ItemPrice="item.ItemPrice"
@@ -29,6 +28,8 @@
    
    <script>
    
+   import axios from "axios";
+   
    export default {
      
      data(){
@@ -39,7 +40,7 @@
        }
      },
      methods:{
-      /* eslint-disable */
+
        refreshData(){
          axios.get('https://localhost:7235/api/Item')
          .then((response)=>{
@@ -54,11 +55,11 @@
            this.$emit('setItemInCart', item);
          }
        },
-       /* eslint-disable */
-       toCart(){
-         var obj = new Item(this.item[0].ItemID,this.item[0].ItemName, this.item[0].ItemPrice, this.item[0].ItemImage, this.item[0].ItemDescription);
-         this.$emit('setItemInCart', obj);
-       }
+   
+      //  toCart(){
+      //    var obj = new Item(this.item[0].ItemID,this.item[0].ItemName, this.item[0].ItemPrice, this.item[0].ItemImage, this.item[0].ItemInfo);
+      //    this.$emit('setItemInCart', obj);
+      //  }
      },
      mounted:function(){
        this.refreshData();
