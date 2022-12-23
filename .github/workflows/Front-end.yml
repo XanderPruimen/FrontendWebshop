@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: 'FrontendWebshop/vetsend'
+        working-directory: 'vetsend'
     strategy:
       matrix:
         node-version: [14.x, 16.x, 18.x]
@@ -33,11 +33,11 @@ jobs:
       uses: actions/cache@v2
       with:
         path: "frontend/node_modules"
-        key: node-modules-${{ hashFiles('FrotendWebshop/vetsend/package.json') }}
+        key: node-modules-${{ hashFiles('vetsend/package.json') }}
     - run: npm ci
-      working-directory: ./FrontendWebshop/vetsend
+      working-directory: ./vetsend
     - run: npm run build --if-present
-      working-directory: ./FrontendWebshop/vetsend
+      working-directory: ./vetsend
 
 #   sonarcloud:
 #     runs-on: ubuntu-latest
