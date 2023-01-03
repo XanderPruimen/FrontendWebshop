@@ -57,9 +57,9 @@ jobs:
       
   docker:
     runs-on: ubuntu-latest
-#     defaults:
-#       run:
-#         working-directory: 'vetsend'
+    defaults:
+      run:
+        working-directory: 'vetsend'
     steps:
       -
         name: Set up QEMU
