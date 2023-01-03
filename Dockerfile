@@ -3,7 +3,7 @@ FROM node:lts-alpine
 
 RUN npm install -g http-server
 
-WORKDIR /app
+WORKDIR /vetsend/app
 
 COPY package*.json ./
 
