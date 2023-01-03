@@ -22,8 +22,7 @@
     },
     methods:{
       register(){
-        axios.post('https://localhost:44334/Account/register',{
-          "name": this.name,
+        axios.post('https://localhost:7235/RegisterForm',{
           "email": this.email,
           "password": this.password
         })

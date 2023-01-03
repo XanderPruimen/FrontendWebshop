@@ -68,12 +68,12 @@
    import axios from "axios";
    import Item from "../classes/Item";
    export default {
-     name: "ItemDetails",
+     name: "ProductDetails",
      
      data(){
        return{
-         id: Number,
-         itemNAME: "",
+         ItemID: Number,
+         itemName: "",
          item: [],
        };
      },
