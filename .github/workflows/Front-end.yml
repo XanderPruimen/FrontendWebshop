@@ -36,9 +36,9 @@ jobs:
         path: "frontend/node_modules"
         key: node-modules-${{ hashFiles('package.json') }}
     - run: npm ci
-      working-directory: ./vetsend
+#      working-directory: ./vetsend
     - run: npm run build --if-present
-      working-directory: ./vetsend
+#      working-directory: ./vetsend
       
   sonarcloud:
     runs-on: ubuntu-latest
