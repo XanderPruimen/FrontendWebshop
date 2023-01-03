@@ -80,4 +80,4 @@ jobs:
         with:
           file: Dockerfile
           push: true
-          tags: xanderpruimen/vetsend:latest
+          tags: xanderpruimen/frontendwebshop:latest
