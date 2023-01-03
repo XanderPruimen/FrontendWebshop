@@ -16,9 +16,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: 'vetsend'
+#    defaults:
+#      run:
+#        working-directory: 'vetsend'
     strategy:
       matrix:
         node-version: [14.x]
@@ -36,9 +36,9 @@ jobs:
         path: "frontend/node_modules"
         key: node-modules-${{ hashFiles('vetsend/package.json') }}
     - run: npm ci
-      working-directory: ./vetsend
+#      working-directory: ./vetsend
     - run: npm run build --if-present
-      working-directory: ./vetsend
+#      working-directory: ./vetsend
       
   sonarcloud:
     runs-on: ubuntu-latest
