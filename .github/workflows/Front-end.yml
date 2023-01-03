@@ -34,7 +34,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: "frontend/node_modules"
-        key: node-modules-${{ hashFiles('vetsend/package.json') }}
+        key: node-modules-${{ hashFiles('/package.json') }}
     - run: npm ci
 #      working-directory: ./vetsend
     - run: npm run build --if-present
