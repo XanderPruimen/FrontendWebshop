@@ -7,14 +7,14 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active" >
-                <img class="d-block w-100" src="../assets/Discountdog.jpg" alt="First slide">
+                <img class="d-block w-100" src="../assets/Discountdog2.jpg" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                     <!-- <h5>My Caption Title (1st Image)</h5>
                     <p>The whole caption will only show up if the screen is at least medium size.</p> -->
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../assets/Discountdog2.jpg" alt="Second slide">
+                <img class="d-block w-100" src="../assets/Discountdog3.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="../assets/Discountcat.jpg" alt="Third slide">
