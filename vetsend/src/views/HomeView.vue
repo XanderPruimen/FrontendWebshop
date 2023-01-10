@@ -29,6 +29,9 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <div>
+        <ChatbotMenu></ChatbotMenu>
+    </div>
       <!-- <div class="home">
       
       
@@ -42,9 +45,14 @@
     
     <script>
 
+    import ChatbotMenu from '../../src/components/ChatbotMenu.vue';
     
     export default {
       name: 'HomeView',
-
+      components: {
+      ChatbotMenu
+  }
     }
+
+    
     </script>
