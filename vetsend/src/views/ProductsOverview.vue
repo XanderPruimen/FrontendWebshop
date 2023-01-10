@@ -8,7 +8,7 @@
     </div>
   </div> -->
   
-  <Item/>
+  <Product/>
   <!-- <div class="row" style="border: 1px">
       <div class="col-3">
             <ProductCard
@@ -21,12 +21,12 @@
   </template>
   
   <script>
-  import Item from '@/components/ProductItem.vue'
+  import Product from '@/components/ProductItem.vue'
   // import ProductCard from '@/components/ProductCard.vue'
   // import ProductCard from '@/components/ProductCard.vue'
   export default{
     components:{
-      Item,
+      Product,
       // ProductCard
     },
     

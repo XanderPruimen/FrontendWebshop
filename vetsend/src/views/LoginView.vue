@@ -21,7 +21,7 @@
       async login(email, password){
         axios({
           method: 'post',
-          url: 'https://localhost:7235/login',
+          url: 'https://localhost:44344/Account/login',
           data: {
             email: email,
             password: password
