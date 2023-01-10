@@ -4,13 +4,13 @@
          <div class="card-body">
                             <form @submit="submitProduct">
                             <strong>Name:</strong>
-                            <input type="text" class="form-control" v-model="itemName">
+                            <input type="text" class="form-control" v-model="productName">
                             <strong>Price:</strong>
-                            <input type="text" class="form-control" v-model="itemPrice">
+                            <input type="text" class="form-control" v-model="productPrice">
                             <strong>Description:</strong>
-                            <textarea class="form-control" v-model="itemInfo"></textarea>
+                            <textarea class="form-control" v-model="productDescription"></textarea>
                             <strong>ImageLink:</strong>
-                            <input type="text" class="form-control" v-model="itemImage">
+                            <input type="text" class="form-control" v-model="productImage">
         
                             <button class="btn btn-success">Submit</button>
                             </form>
@@ -22,37 +22,39 @@
     </div>	
     </template>
     <script>
+       import axios from "axios";
+       
         export default{
             data () {
         return {
                 
-            itemName: '',
-          itemInfo: '',
-          itemPrice: '',
-          itemImage: '',
+          productName: '',
+          productPrice: '',
+          productDescription: '',
+          productImage: '',
           output: ''
     
             
         }
       },
       methods:{
-            // submitProduct(){
-            //     axios.post('https://localhost:44334/Product/Create', {
-            //         productName: this.productName,
-            //         productDescription: this.productDescription,
-            //         productPrice: this.productPrice,
-            //         productImage: this.productImage,
-            //   })
-            //     .then((response)=>{
-            //         this.output = response.data
+            submitProduct(){
+                axios.post('https://localhost:44334/Product/Create', {
+                    productName: this.productName,
+                    productDescription: this.productDescription,
+                    productPrice: this.productPrice,
+                    productImage: this.productImage,
+              })
+                .then((response)=>{
+                    this.output = response.data
                     
-            //     })
+                })
                 
-            //     .catch((error)=>{
-            //         this.output = error;
-            //     })
+                .catch((error)=>{
+                    this.output = error;
+                })
                 
-            // }
+            }
         }
         }
     </script>

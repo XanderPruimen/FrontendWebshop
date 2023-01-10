@@ -23,15 +23,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="item in shoppingCart" :key="item.product.productID">
+                <tr v-for="product in shoppingCart" :key="product.product.productID">
                   <td><img class="img-cart" :src="(item.product.productImage)" alt="Product Image"></td>
-                  <td>{{item.product.productName}}</td>
-                  <td>$ {{item.product.productPrice}}</td>
-                  <td>{{item.amount}}</td>
+                  <td>{{product.product.productName}}</td>
+                  <td>$ {{product.product.productPrice}}</td>
+                  <td>{{product.amount}}</td>
                 </tr>
                 <tr>
                   <td></td>
-                  <td>Items: {{shoppingCart.length}}</td>
+                  <td>products: {{shoppingCart.length}}</td>
                 </tr>
                 <tr>
                   <td></td>

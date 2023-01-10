@@ -2,7 +2,7 @@
 <template>
     <h1>Your cart</h1>
       <table class="table" style="border-top: 5px solid #d9322b; border-bottom: 5px solid #0f6fb7;
-      background-color: white; ">
+       background-color: white; ">
         <thead>
         <tr>
           <th scope="col"></th>
@@ -12,11 +12,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="item in shoppingCart" :key="item.productID">
-          <th><img class="img-cart" :src="(item.product.productImage)" alt="Product Image"></th>
-          <td>{{item.product.productName}}</td>
-          <td>{{item.amount}}</td>
-          <td>{{item.product.productPrice}}</td>
+        <tr v-for="product in shoppingCart" :key="product.productID">
+          <th><img class="img-cart" :src="(product.product.productImage)" alt="Product Image"></th>
+          <td>{{product.product.productName}}</td>
+          <td>{{product.amount}}</td>
+          <td>{{product.product.productPrice}}</td>
         </tr>
         <tr>
           <td></td>

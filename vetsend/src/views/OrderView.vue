@@ -12,11 +12,11 @@
           </tr>
           </thead>
           <tbody>
-          <tr v-for="item in shoppingCart" :key="item.productID">
-            <th scope="row"><img class="img-cart" :src="require('@/assets/' + item.product.productImage + '')" alt="Product Image"></th>
-            <td>{{item.product.productName}}</td>
-            <td>{{item.amount}}</td>
-            <td>{{item.product.productPrice}}</td>
+          <tr v-for="product in shoppingCart" :key="product.productID">
+            <th scope="row"><img class="img-cart" :src="require('@/assets/' + product.product.productImage + '')" alt="Product Image"></th>
+            <td>{{product.product.productName}}</td>
+            <td>{{product.amount}}</td>
+            <td>{{product.product.productPrice}}</td>
           </tr>
           <tr>
             <td></td>
@@ -94,7 +94,7 @@
       async getUser(){
         axios.get('https://localhost:44334/Account/getUser', {
           headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('token') //the token is a variable which holds the token
+            Authorization: 'Bearer ' + localStorage.getProduct('token') //the token is a variable which holds the token
           }
         })
           .then((response) => {
