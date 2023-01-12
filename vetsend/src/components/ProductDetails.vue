@@ -14,8 +14,8 @@
              <div class="col-12 mb-0">
                <figure class="view overlay rounded z-depth-1 main-img">
                  
-                   <img :src="(product[0].productImage)"
-                     class="img-fluid z-depth-1">
+                   <!-- <img :src="(product[0].productImage)"
+                     class="img-fluid z-depth-1"> -->
                 
                </figure>
 

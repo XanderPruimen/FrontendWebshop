@@ -3,7 +3,7 @@
        <div class="card-deck"  >
            <router-link v-for="product in products" :key="product.productID" :to="{ name: 'ProductDetails', params: { id: product.productID} }">
              <div class="card" style="width: 18rem; height: 25em;">
-               <img :src="(product.productImage)" class="card-img-top imagesize" alt="Test">
+               <!-- <img :src="(product.productImage)" class="card-img-top imagesize" alt="Test"> -->
                <div class="card-body">
                  <h5 class="card-title">{{product.productName}}</h5>
                  <h6 class="card-text">${{product.productPrice}}</h6>
@@ -42,7 +42,7 @@
      methods:{
 
        refreshData(){
-         axios.get('https://localhost:7235/api/Item')
+         axios.get('https://localhost:44334/api/Product')
          .then((response)=>{
            this.products= response.data;
            
