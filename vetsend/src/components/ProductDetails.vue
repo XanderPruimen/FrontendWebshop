@@ -53,7 +53,7 @@
          </div>
          <hr>
 
-         <button type="button" class="btn btn-light" style="border-top: 5px solid #d9322b; border-bottom: 5px solid #0f6fb7;
+         <button type="button" class="btn btn-light" style="border-top: 5px solid #9EEB47; border-bottom: 5px solid #9EEB47;
              background-color: white; " @click.self="toCart()">
            <i class="material-icons" >add_shopping_cart</i> Add to cart</button>
        </div>
@@ -73,7 +73,7 @@
      data(){
        return{
          productID: Number,
-         prdouctName: "",
+         productName: "",
          product: [],
        };
      },
@@ -84,7 +84,7 @@
      },
      methods:{
        refreshData(){
-         axios.get('https://localhost:7235/api/Item'+ this.productID)
+         axios.get('https://localhost:44334/api/Product'+ this.productID)
              .then((response) => {
                this.product = response.data;
                console.log(this.product[0])
